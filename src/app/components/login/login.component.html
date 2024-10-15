@@ -1,0 +1,37 @@
+<div class="login-container">
+  <h1>Bienvenido a AppQR</h1>
+  <p>Inicia sesión para acceder a tu cuenta</p>
+
+  <form (ngSubmit)="login()" class="login-form">
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="mail-outline"></ion-icon>
+        Correo electrónico
+      </ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        Contraseña
+      </ion-label>
+      <ion-input [type]="passwordFieldType" name="password" [(ngModel)]="password" required></ion-input>
+      <ion-icon [name]="passwordIcon" slot="end" class="password-toggle-icon" (click)="togglePasswordVisibility()"></ion-icon>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" class="login-button">
+      <ion-icon name="log-in-outline" slot="start"></ion-icon>
+      Iniciar sesión
+    </ion-button>
+  </form>
+
+  <div class="additional-options">
+    <ion-button fill="clear" (click)="goToResetPassword()" class="forgot-password-button">
+      ¿Olvidaste tu contraseña?
+    </ion-button>
+    <ion-button fill="clear" (click)="goToRegister()" class="register-button">
+      Registrarse
+    </ion-button>
+  </div>
+</div>
