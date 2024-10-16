@@ -3,17 +3,16 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
+  selector: 'app-view-alumn',
+  templateUrl: './view-alumn.page.html',
+  styleUrls: ['./view-alumn.page.scss'],
 })
-export class InicioPage implements OnInit {
+export class ViewAlumnPage implements OnInit {
   username: string = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    
     this.authService.getUserData().subscribe(userData => {
       if (userData) {
         this.username = userData.username;

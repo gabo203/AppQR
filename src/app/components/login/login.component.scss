@@ -34,9 +34,10 @@
       ion-input {
         color: #ffffff;
       }
+
       .password-toggle-icon {
-        color: #ffffff; // Cambia el color del ícono a blanco
-        cursor: pointer; // Cambia el cursor para indicar que es clicable
+        color: #ffffff; // Change the icon color to white
+        cursor: pointer; // Change the cursor to indicate it's clickable
       }
     }
 
@@ -62,11 +63,15 @@
     .register-button {
       --color: #ffffff;
       font-weight: bold;
+      font-size: 12px; // Smaller font size
+      text-transform: capitalize; // Capitalize first letter
     }
   }
 
   .forgot-password-button,
   .register-button {
     --color: white;
+    font-size: 12px; // Smaller font size
+    text-transform: capitalize; // Capitalize first letter
   }
 }

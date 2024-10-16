@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AuthGuard } from './guards/auth.guard'; // Importa el guard de autenticación
+import { AuthGuard } from './guards/auth.guard'; // Import the authentication guard
 
 const routes: Routes = [
   {
@@ -14,12 +14,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [AuthGuard] // Protege la ruta con el guard
-  },
-  {
-    path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule),
-    canActivate: [AuthGuard] // Protege la ruta con el guard
+    canActivate: [AuthGuard] // Protect the route with the guard
   },
   {
     path: 'reset-password',
@@ -32,6 +27,16 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'view-alumn',
+    loadChildren: () => import('./view-alumn/view-alumn.module').then(m => m.ViewAlumnPageModule),
+    canActivate: [AuthGuard] // Protect the route with the guard
+  },
+  {
+    path: 'view-teaching',
+    loadChildren: () => import('./view-teaching/view-teaching.module').then(m => m.ViewTeachingPageModule),
+    canActivate: [AuthGuard] // Protect the route with the guard
   }
 ];
 
