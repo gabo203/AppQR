@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ViewAlumnPage implements OnInit {
   username: string = '';
+  showPokemonList: boolean = false; // Variable para controlar la visibilidad
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -18,6 +19,10 @@ export class ViewAlumnPage implements OnInit {
         this.username = userData.username;
       }
     });
+  }
+
+  togglePokemonList() {
+    this.showPokemonList = !this.showPokemonList; // Alternar la visibilidad
   }
 
   async logout() {

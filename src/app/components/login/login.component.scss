@@ -11,11 +11,14 @@
     color: #ffffff;
     font-size: 28px;
     margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   p {
-    color: #e0e0e0;
-    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .login-form {
@@ -34,11 +37,6 @@
       ion-input {
         color: #ffffff;
       }
-
-      .password-toggle-icon {
-        color: #ffffff; // Change the icon color to white
-        cursor: pointer; // Change the cursor to indicate it's clickable
-      }
     }
 
     .login-button {
@@ -48,30 +46,60 @@
       --background-activated: #3b5998;
       --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
       --border-radius: 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
   }
 
-  .register-section {
-    margin-top: 30px;
-    text-align: center;
+  .additional-options {
+    margin-top: 20px;
 
-    p {
-      color: #e0e0e0;
-      margin-bottom: 10px;
-    }
-
-    .register-button {
-      --color: #ffffff;
+    ion-button {
+      --color: white;
       font-weight: bold;
-      font-size: 12px; // Smaller font size
-      text-transform: capitalize; // Capitalize first letter
+      font-size: 0.85em;
+      text-transform: capitalize;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
   }
 
-  .forgot-password-button,
-  .register-button {
-    --color: white;
-    font-size: 12px; // Smaller font size
-    text-transform: capitalize; // Capitalize first letter
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    animation: shake 0.3s ease-in-out;
+
+    .register-link {
+      color:#b3b3ff; /* Color celeste */
+      margin-left: 5px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    &.hidden {
+      display: none;
+    }
   }
+
+  .error-icon {
+    margin-right: 5px;
+    font-size: 1.2em;
+  }
+
+  .eye-icon {
+    color: white;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+.password-toggle-icon {
+  color: white;
 }

@@ -10,6 +10,15 @@
       </ion-label>
       <ion-input type="email" name="email" [(ngModel)]="email" required></ion-input>
     </ion-item>
+    <div *ngIf="emailInvalid" class="error-message">
+      <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+      Correo inválido. Usa &#64;duocuc.cl o &#64;profesor.duoc.cl.
+    </div>
+    <div *ngIf="emailNotRegistered" class="error-message">
+      <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+      Este Correo no se encuentra Registrado. 
+      <a (click)="goToRegister()" class="register-link">Regístrarse</a>
+    </div>
 
     <ion-item>
       <ion-label position="floating">
@@ -19,6 +28,10 @@
       <ion-input [type]="passwordFieldType" name="password" [(ngModel)]="password" required></ion-input>
       <ion-icon [name]="passwordIcon" slot="end" class="password-toggle-icon" (click)="togglePasswordVisibility()"></ion-icon>
     </ion-item>
+    <div *ngIf="incorrectPassword" class="error-message">
+      <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+      Contraseña incorrecta.
+    </div>
 
     <ion-button type="submit" expand="block" class="login-button">
       <ion-icon name="log-in-outline" slot="start"></ion-icon>
@@ -31,7 +44,7 @@
       ¿Olvidaste tu contraseña?
     </ion-button>
     <ion-button fill="clear" (click)="goToRegister()" class="register-button">
-      ¿No tienes una cuenta? Regístrate
+      ¿No tienes una cuenta? Regístrarse
     </ion-button>
   </div>
 </div>

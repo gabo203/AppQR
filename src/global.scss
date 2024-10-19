@@ -35,3 +35,40 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+/* Add this to your global styles.scss or styles.css */
+/* styles.scss o styles.css */
+/* styles.scss o styles.css */
+.toast-center-center {
+  top: 13% !important;
+  left: 75% !important;
+  transform: translate(-50%, -50%) !important;
+  position: fixed !important; /* Asegúrate de que la posición sea fija */
+  z-index: 9999 !important; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.toast-success {
+  background-color: #28a745 !important; /* Fondo verde */
+  color: #fff !important; /* Texto blanco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-success::before {
+  content: '✔️'; /* Icono de check */
+  margin-right: 8px;
+}
+.custom-toastr-error {
+  background-color: orange !important;
+  color: white !important;
+  display: flex;
+  align-items: center;
+}
+
+.custom-toastr-error .toast-message {
+  flex-grow: 1;
+}
+
+.custom-toastr-error .toast-icon {
+  margin-right: 10px;
+}

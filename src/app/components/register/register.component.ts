@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,11 @@ export class RegisterComponent implements OnInit {
   usernameInvalid: boolean = false;
   private errorTimeout: any;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {}
 
@@ -37,15 +42,15 @@ export class RegisterComponent implements OnInit {
       this.authService.register(this.email, this.password, this.username)
         .then(resultado => {
           if (resultado) {
-            alert('¡Registro exitoso!');
+            this.toastr.success('¡Registro exitoso! Por favor, verifica tu bandeja de entrada para confirmar tu registro.', 'Registro Exitoso');
             this.router.navigate(['/login']);
           } else {
-            alert('Error en el registro. Por favor, intente nuevamente.');
+            this.toastr.error('Error en el registro. Por favor, intente nuevamente.', 'Error');
           }
         })
         .catch(error => {
           console.error('Error en el registro: ', error);
-          alert('Error en el registro. Por favor, verifique sus datos e intente nuevamente.');
+          this.toastr.error('Error en el registro. Por favor, verifique sus datos e intente nuevamente.', 'Error');
         });
     }
   }

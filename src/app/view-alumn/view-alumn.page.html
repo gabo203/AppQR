@@ -20,4 +20,12 @@
   <div class="welcome-message">
     <h1>Bienvenido, {{ username }}!</h1>
   </div>
+
+  <ion-button expand="block" (click)="togglePokemonList()">
+    Ver Pokémon
+  </ion-button>
+
+  <div *ngIf="showPokemonList">
+    <app-pokedex></app-pokedex>
+  </div>
 </ion-content>
